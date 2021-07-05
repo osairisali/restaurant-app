@@ -6,9 +6,11 @@ import {
 import NotificationHelper from '../utils/notification-helper'
 
 const LikeButtonInitiator = {
-  async init ({ likeButtonContainer, resto }) {
+  async init ({ likeButtonContainer, resto, favouriteResto, notificationHelper }) {
     this._likeButtonContainer = likeButtonContainer
     this._resto = resto
+    this._favouriteResto = favouriteResto
+    this._notificationHelper = notificationHelper
 
     await this._renderButton()
   },
@@ -23,7 +25,7 @@ const LikeButtonInitiator = {
     }
   },
   async _isRestoExist (id) {
-    const resto = await FavouriteRestoIdb.getRestaurant(id)
+    const resto = await this._favouriteResto.getRestaurant(id)
     console.log('resto from _isRestoExist: ', resto)
     return !!resto
   },
@@ -32,7 +34,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#likeButton')
     likeButton.addEventListener('click', async () => {
-      await FavouriteRestoIdb.putRestaurant(this._resto)
+      await this._favouriteResto.putRestaurant(this._resto)
       await this._renderButton()
       await NotificationHelper.sendNotification({
         title: 'Hunger Apps',
@@ -48,7 +50,7 @@ const LikeButtonInitiator = {
     likedButton.addEventListener('click', async () => {
       await FavouriteRestoIdb.deleteRestaurant(id)
       await this._renderButton()
-      await NotificationHelper.sendNotification({
+      await this._notificationHelper.sendNotification({
         title: 'Hunger Apps',
         options: { body: 'your liked restaurant removed' }
       })

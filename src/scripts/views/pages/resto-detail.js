@@ -10,6 +10,8 @@ import LikeButtonInitiator from '../../utils/like-button-initiator'
 import SubmitButtonInitiator from '../../utils/submit-button-initiator'
 import { addLoader, removeLoader } from '../../utils/loader'
 import clearElement from '../../utils/clear-element'
+import FavouriteRestoIdb from '../../data/favourite-resto-idb'
+import NotificationHelper from '../../utils/notification-helper'
 
 const RestoDetail = {
   async render () {
@@ -40,7 +42,9 @@ const RestoDetail = {
       )
       await LikeButtonInitiator.init({
         likeButtonContainer,
-        resto: restaurant
+        resto: restaurant,
+        favouriteResto: FavouriteRestoIdb,
+        notificationHelper: NotificationHelper
       })
 
       // submit review field
