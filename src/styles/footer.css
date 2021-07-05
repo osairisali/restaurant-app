@@ -1,0 +1,13 @@
+footer {
+  padding: 10px 0;
+  background-color: red;
+}
+
+#footer {
+  font-size: 15px;
+  padding: 10px 0;
+  color: white;
+  bottom: 0;
+}
+
+/* TABLET VIEW */

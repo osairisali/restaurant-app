@@ -1,0 +1,27 @@
+@media (min-width: 1000px) {
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  #hamburgerBtn {
+    display: none;
+  }
+
+  .nav {
+    width: 100%;
+    transform: translate(0, 0);
+  }
+
+  .nav__list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 100%;
+  }
+
+  .nav__list li a {
+    display: inline-block;
+    line-height: 45px;
+  }
+}

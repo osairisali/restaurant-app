@@ -1,0 +1,137 @@
+#restoList {
+  display: grid;
+  row-gap: 10px;
+}
+
+/*
+    Resto Item
+  */
+
+.resto-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resto-item__header {
+  position: relative;
+}
+
+.resto-item .resto-item__header .resto-item__header__poster {
+  width: 100%;
+}
+
+.resto-item__header__poster{
+  object-fit: cover;
+}
+
+img {
+  height: 100%;
+}
+
+.resto-item .resto-item__header .resto-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.resto-item
+  .resto-item__header
+  .resto-item__header__rating
+  .resto-item__header__rating__score {
+  margin-left: 10px;
+}
+
+.resto-item .resto-item__content {
+  padding: 16px;
+}
+
+.resto-item .resto-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.resto-item .resto-item__content h3 a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+.resto-item__content h3 a {
+  display: inline-block;
+  line-height: 45px;
+}
+
+.resto-item__content h4 {
+  text-align: center;
+}
+
+.resto-item .resto-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/*
+      Restaurant
+    */
+
+.resto {
+  margin: 50px auto;
+  width: 100%;
+  /* max-width: 800px; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 18px;
+  grid-row-gap: 18px;
+  /* gap: 18px 16px; */
+}
+
+.resto .resto__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.resto .resto__info h4 {
+  margin: 8px 0;
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 768px) {
+  #restoList {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  #resto {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resto-item__header {
+    position: relative;
+    height: 15rem;
+    width: 100%;
+  }
+}
+
+/* LAPTOP VIEW */
+@media screen and (min-width: 1024px) {
+  #restoList {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  .resto-item__header {
+    position: relative;
+    /* height: 300px; */
+  }
+
+  #resto {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

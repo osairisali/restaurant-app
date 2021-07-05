@@ -1,0 +1,13 @@
+.review{
+    display: flex;
+    flex-direction: column
+}
+
+.reviewItem{
+    border:pink;
+    border-style: solid;
+    border-width: 3px;
+    margin-bottom: 5px;
+    padding: 5px;
+    overflow: auto;
+}

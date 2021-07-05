@@ -1,0 +1,10 @@
+#loader-wrapper {
+  display: flex;
+  background-image: url("../public/images/Spinner-1s-200px.gif");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,35 @@
+#explore {
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  display:block;
+  padding: 50px 0;
+}
+
+.content {
+  padding: 10px;
+}
+
+.content__heading {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 60px 10px;
+  }
+
+  .content__heading {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content__heading {
+    padding: 20px 40px;
+  }
+}

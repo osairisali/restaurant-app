@@ -1,0 +1,63 @@
+#restoDetail {
+  padding: 10px;
+}
+
+.imageResto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resto__title {
+  text-align: center;
+}
+
+.mainInfo {
+  display: grid;
+}
+
+.resto__box {
+  padding: 5px;
+  border: 2px;
+  border-style: solid;
+  border-color: gray;
+  margin: 5px;
+}
+
+.resto__box,
+h4 {
+  margin: 10px 0;
+}
+
+.resto__box,
+p {
+  margin: 0 0 5px 0;
+}
+
+.resto__overview {
+  padding: 10px;
+  text-align: justify;
+}
+
+.resto__overview,
+h3 {
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .mainInfo {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+}
+
+.submitReview {
+  display: flex;
+  /* flex-direction: column; */
+
+}
+
+.nameInput{
+    display: flex;
+    justify-content: flex-start;
+}
