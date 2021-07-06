@@ -11,4 +11,10 @@ const createLikeButtonPresenter = async (resto) => {
   })
 }
 
-export { createLikeButtonPresenter }
+const createUnlikeButtonPresenter = async () => {
+  await FavouriteRestoIdb.putRestaurant({ id: 1 })
+
+  await createLikeButtonPresenter({ id: 1 })
+}
+
+export { createLikeButtonPresenter, createUnlikeButtonPresenter }

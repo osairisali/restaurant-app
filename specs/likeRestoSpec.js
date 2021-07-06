@@ -1,10 +1,8 @@
 import FavouriteRestoIdb from '../src/scripts/data/favourite-resto-idb'
-import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator'
-import NotificationHelper from '../src/scripts/utils/notification-helper'
 import { createLikeButtonPresenter } from './helper/testFactories'
 
 /* eslint-disable no-undef */
-describe('liking a restaurant', () => {
+describe('Liking a restaurant', () => {
   const addLikeButtonContainer = () => {
     document.body.innerHTML = '<div id="likeButtonContainer"></div>'
   }
@@ -36,7 +34,7 @@ describe('liking a restaurant', () => {
     await FavouriteRestoIdb.deleteRestaurant(1)
   })
 
-  it('should should not add the already liked restaurant', async () => {
+  it('should not add the already liked restaurant', async () => {
     await createLikeButtonPresenter({ id: 1 })
 
     // putting {id: 1} manually to restaurants idb
