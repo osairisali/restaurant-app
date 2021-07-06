@@ -31,7 +31,8 @@ window.addEventListener('hashchange', async () => {
   await app.renderPage()
 })
 
-window.addEventListener('load', async () => {
+// faster event with DOMContentLoaded rather than load event
+window.addEventListener('DOMContentLoaded', async () => {
   await app.renderPage()
 
   try {

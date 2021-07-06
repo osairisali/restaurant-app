@@ -28,6 +28,13 @@ const FavouriteRestoIdb = {
   },
   async deleteRestaurant (id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id)
+  },
+  async searchRestaurants (keywords) {
+    const normalizedKeywords = keywords.toLowerCase() || '-'
+    return (await this.getRestaurantList()).filter(({ title }) => {
+      const normalizedTitle = title ? title.toLowerCase() : '-'
+      return normalizedTitle.indexOf(normalizedKeywords) !== -1
+    })
   }
 }
 
