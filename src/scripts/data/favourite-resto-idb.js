@@ -31,9 +31,9 @@ const FavouriteRestoIdb = {
   },
   async searchRestaurants (keywords) {
     const normalizedKeywords = keywords.toLowerCase() || '-'
-    return (await this.getRestaurantList()).filter(({ title }) => {
-      const normalizedTitle = title ? title.toLowerCase() : '-'
-      return normalizedTitle.indexOf(normalizedKeywords) !== -1
+    return (await this.getRestaurantList()).filter(({ name }) => {
+      const normalizedName = name ? name.toLowerCase() : '-'
+      return normalizedName.indexOf(normalizedKeywords) !== -1
     })
   }
 }

@@ -11,14 +11,14 @@ const createRestoItemTemplate = ({
   return `
     <div class="resto-item">
     <div class="resto-item__header">
-        <img class="resto-item__header__poster" alt="${name}"
+        <img class="resto-item__header__poster" alt="${name || '-'}"
             src="${config.BASE_IMAGE_URL(pictureId)}">
         <div class="resto-item__header__rating">
             <p>⭐️<span class="resto-item__header__rating__score">${rating}</span></p>
         </div>
     </div>
     <div class="resto-item__content">
-        <h3><a href="${`/#/detail/${id}`}">${name}</a></h3>
+        <h3 class="resto-title"><a href="${`/#/detail/${id}`}">${name || '-'}</a></h3>
         <h4>${city}</h4>
         <p>${description}</p>
     </div>

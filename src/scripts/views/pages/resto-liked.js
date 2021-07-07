@@ -1,31 +1,26 @@
+/* eslint-disable no-new */
 import FavouriteRestoIdb from '../../data/favourite-resto-idb'
 import {
-  createRestoItemTemplate,
   createFailedPageTemplate
 } from '../templates/template-creator'
 import clearElement from '../../utils/clear-element'
+import FavouriteRestoSearchView from './liked/favorite-resto-search-view'
+import FavoriteRestoShowPresenter from './liked/favorite-resto-show-presenter'
+import FavoriteRestoSearchPresenter from './favorite-resto-search-presenter'
+
+const view = new FavouriteRestoSearchView()
+console.log('view instance: ', view.showFavoriteRestaurants)
 
 const RestoLiked = {
   async render () {
     clearElement(['#searchRestoContainer'])
 
-    return `
-        <div class="content">
-        <h2 class="content__heading">Your Liked Restaurants</h2>
-        <div id="resto" class="resto">
-   
-        </div>
-      </div>
-        `
+    return view.getTemplate()
   },
   async afterRender () {
     try {
-      const restoLikedContainer = document.querySelector('#resto')
-      const likedRestos = await FavouriteRestoIdb.getRestaurantList()
-
-      likedRestos.forEach((resto) => {
-        restoLikedContainer.innerHTML += createRestoItemTemplate(resto)
-      })
+      new FavoriteRestoShowPresenter({ view, favoriteRestaurants: FavouriteRestoIdb })
+      new FavoriteRestoSearchPresenter({ view, favoriteRestaurants: FavouriteRestoIdb })
     } catch (error) {
       console.log(error)
       createFailedPageTemplate('#resto')

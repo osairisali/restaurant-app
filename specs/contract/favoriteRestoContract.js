@@ -43,18 +43,18 @@ const itActsAsFavoriteRestaurantModel = (favoriteResto) => {
   })
 
   it('should be able to search favourite restaurants', async () => {
-    await favoriteResto.putRestaurant({ id: 1, title: 'restaurant a' })
-    await favoriteResto.putRestaurant({ id: 2, title: 'restaurant bas' })
-    await favoriteResto.putRestaurant({ id: 3, title: 'restaurant bes' })
-    await favoriteResto.putRestaurant({ id: 4, title: 'restaurant bos' })
+    await favoriteResto.putRestaurant({ id: 1, name: 'restaurant a' })
+    await favoriteResto.putRestaurant({ id: 2, name: 'restaurant bas' })
+    await favoriteResto.putRestaurant({ id: 3, name: 'restaurant bes' })
+    await favoriteResto.putRestaurant({ id: 4, name: 'restaurant bos' })
     await favoriteResto.putRestaurant({ id: 5 })
 
     const foundRestaurants = await favoriteResto.searchRestaurants('as')
-    expect(foundRestaurants).toEqual([{ id: 2, title: 'restaurant bas' }])
+    expect(foundRestaurants).toEqual([{ id: 2, name: 'restaurant bas' }])
 
     // test for empty query
     const foundRestaurants2 = await favoriteResto.searchRestaurants('')
-    expect(foundRestaurants2).toEqual([{id: 5}])
+    expect(foundRestaurants2).toEqual([{ id: 5 }])
 
     // test for - query
     const foundRestaurants3 = await favoriteResto.searchRestaurants('-')

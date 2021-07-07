@@ -1,4 +1,4 @@
-Feature('Liking Movies');
+Feature('Liking Restaurants');
 
 Scenario('test something', ({ I }) => {
 

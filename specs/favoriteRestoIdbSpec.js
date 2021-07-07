@@ -6,6 +6,7 @@ describe('Favorite restaurant IDB contract test implementation', () => {
   afterEach(async () => {
     const likedRestaurants = await FavouriteRestoIdb.getRestaurantList()
 
+    // delete every liked restaurant after each test
     await Promise.all(
       likedRestaurants.map(async ({ id }) => {
         await FavouriteRestoIdb.deleteRestaurant(id)

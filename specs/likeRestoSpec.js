@@ -1,5 +1,5 @@
 import FavouriteRestoIdb from '../src/scripts/data/favourite-resto-idb'
-import { createLikeButtonPresenter } from './helper/testFactories'
+import { createLikeButtonPresenterWithResto } from './helper/testFactories'
 
 /* eslint-disable no-undef */
 describe('Liking a restaurant', () => {
@@ -12,19 +12,19 @@ describe('Liking a restaurant', () => {
   })
 
   it('should show the like button when the restaurant is not liked before', async () => {
-    await createLikeButtonPresenter({ id: 1 })
+    await createLikeButtonPresenterWithResto({ id: 1 })
 
     expect(document.querySelector('[aria-label="like this restaurant"]')).toBeTruthy()
   })
 
   it('should not show unlike button when the restaurant has not been liked before', async () => {
-    await createLikeButtonPresenter({ id: 1 })
+    await createLikeButtonPresenterWithResto({ id: 1 })
 
     expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeFalsy()
   })
 
   it('should be able to like the restaurant', async () => {
-    await createLikeButtonPresenter({ id: 1 })
+    await createLikeButtonPresenterWithResto({ id: 1 })
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'))
 
@@ -35,7 +35,7 @@ describe('Liking a restaurant', () => {
   })
 
   it('should not add the already liked restaurant', async () => {
-    await createLikeButtonPresenter({ id: 1 })
+    await createLikeButtonPresenterWithResto({ id: 1 })
 
     // putting {id: 1} manually to restaurants idb
     await FavouriteRestoIdb.putRestaurant({ id: 1 })
@@ -51,7 +51,7 @@ describe('Liking a restaurant', () => {
   })
 
   it('should not add a restaurant with no id', async () => {
-    await createLikeButtonPresenter({ ids: 1 })
+    await createLikeButtonPresenterWithResto({ ids: 1 })
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'))
 
