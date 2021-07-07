@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import FavouriteRestoIdb from '../src/scripts/data/favourite-resto-idb'
-import FavoriteRestoSearchPresenter from '../src/scripts/views/pages/favorite-resto-search-presenter'
+import FavoriteRestoSearchPresenter from '../src/scripts/views/pages/liked/favorite-resto-search-presenter'
 import FavouriteRestoSearchView from '../src/scripts/views/pages/liked/favorite-resto-search-view'
 
 describe('Searching liked restaurants', () => {
@@ -80,7 +80,7 @@ describe('Searching liked restaurants', () => {
       ]
       document.querySelector('#resto').addEventListener('resto:updated', (event) => {
         const restoTitles = document.querySelectorAll('.resto-title')
-        console.log(restoTitles)
+        // console.log(restoTitles)
         for (let i = 0; i < stub.length; i++) {
           expect(restoTitles[i].textContent).toEqual(stub[i].name)
         }
