@@ -139,7 +139,7 @@ const createFooterTemplate = () => `
 `
 
 const createNoRestaurantFoundTemplate = () => `
-<h3>No Restaurant Found!</h3>
+<h3>No Liked Restaurant Found!</h3>
 `
 
 const createFailedPageTemplate = (component) => {
