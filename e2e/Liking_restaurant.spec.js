@@ -9,11 +9,11 @@ Before(({ I }) => {
 
 Scenario('showing empty liked restaurants', ({ I }) => {
   I.seeElement('#resto')
-  I.see('No Liked Restaurant Found!')
+  I.see('No Restaurant Found!')
 })
 
 Scenario('liking one restaurant', async ({ I }) => {
-  I.see('No Liked Restaurant Found!')
+  I.see('No Restaurant Found!')
   I.amOnPage('/')
   I.seeElement('.resto-item')
 
@@ -33,7 +33,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 })
 
 Scenario('searching liked restaurants', async ({ I }) => {
-  I.see('No Liked Restaurant Found!')
+  I.see('No Restaurant Found!')
 
   I.amOnPage('/')
   I.seeElement('.resto-item')
