@@ -12,10 +12,10 @@ const RestoList = {
     return `
     <!-- JUMBOTRON -->
           <div class="jumbotron lazyload" loading="lazy">
-          <picture>
+          <picture id="jumbotron-image">
           <source media="(min-width: 768px)" srcset="./images/heros/hero-image_2--small.jpg" type="image/jpg">
           <source media="(min-width: 1024px)" srcset="./images/heros/hero-image_2--large.jpg" type="image/jpg">
-          <img class="resto-item__header__poster" alt="jumbotron image" src="./images/heros/hero-image_2--small.jpg"
+          <img class="jumbotron-image__header" alt="jumbotron image" src="./images/heros/hero-image_2--small.jpg"
               loading="lazy" class="lazyload">
           </picture>
               <div class="jumbotron__inner">

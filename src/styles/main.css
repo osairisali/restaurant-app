@@ -10,7 +10,14 @@ main {
 
 .content {
   padding: 10px;
+  width: 100vw;
 }
+
+/* #content-component{
+  display: flex;
+  flex-direction: column;
+
+} */
 
 .content__heading {
   text-align: center;

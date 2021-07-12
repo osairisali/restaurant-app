@@ -1,12 +1,19 @@
 .jumbotron {
-  display: flex;
-  /* background-image: url("../public/images/heros/hero-image_2.jpg");
-  background-size: cover;
-  background-position: center; */
+  /* position: relative; */
   height: 100vh;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
+}
+
+.jumbotron-image__header {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: absolute;
+}
+
+#jumbotron-image{
+  position: absolute;
 }
 
 .jumbotron__inner {
@@ -14,6 +21,9 @@
   width: 100%;
   background-color: wheat;
   opacity: 85%;
+  position: relative;
+  top: 40vh;
+  
 }
 
 .jumbotron__title {
