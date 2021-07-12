@@ -2,10 +2,11 @@
   padding: 10px;
 }
 
-.imageResto {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.imageResto img {
+  padding: 20px;
+  width: 100%;
+  object-fit: cover;
+  text-align: center;
 }
 
 .resto__title {
@@ -54,10 +55,9 @@ h3 {
 .submitReview {
   display: flex;
   /* flex-direction: column; */
-
 }
 
-.nameInput{
-    display: flex;
-    justify-content: flex-start;
+.nameInput {
+  display: flex;
+  justify-content: flex-start;
 }

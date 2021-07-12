@@ -11,7 +11,13 @@ const RestoList = {
   async render () {
     return `
     <!-- JUMBOTRON -->
-          <div class="jumbotron">
+          <div class="jumbotron lazyload" loading="lazy">
+          <picture>
+          <source media="(min-width: 768px)" srcset="./images/heros/hero-image_2--small.jpg" type="image/jpg">
+          <source media="(min-width: 1024px)" srcset="./images/heros/hero-image_2--large.jpg" type="image/jpg">
+          <img class="resto-item__header__poster" alt="jumbotron image" src="./images/heros/hero-image_2--small.jpg"
+              loading="lazy" class="lazyload">
+          </picture>
               <div class="jumbotron__inner">
                   <h1 class="jumbotron__title">Daftar restoran terbaik Indonesia</h1>
                   <p class="jumbotron__tagline">Dapatkan restoran terbaik dari anak muda untuk anak muda!</p>

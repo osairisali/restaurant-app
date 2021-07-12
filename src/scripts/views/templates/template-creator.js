@@ -11,8 +11,12 @@ const createRestoItemTemplate = ({
   return `
     <div class="resto-item">
     <div class="resto-item__header">
-        <img class="resto-item__header__poster" alt="${name || '-'}"
-            src="${config.BASE_IMAGE_URL(pictureId)}">
+    <picture>
+      <source media="(min-width: 768px)" srcset="${config.BASE_IMAGE_URL(pictureId, 'medium')}" type="image/jpeg">
+      <source media="(min-width: 1024px)" srcset="${config.BASE_IMAGE_URL(pictureId, 'large')}" type="image/jpeg">
+      <img class="resto-item__header__poster" alt="${name || '-'}" src="${config.BASE_IMAGE_URL(pictureId, 'small')}"
+           loading="lazy" class="lazyload">
+    </picture>
         <div class="resto-item__header__rating">
             <p>⭐️<span class="resto-item__header__rating__score">${rating}</span></p>
         </div>
@@ -38,10 +42,14 @@ const createRestoDetailTemplate = ({
 }) => {
   return `
  <h2 class="resto__title">${name}</h2>
- <div class="imageResto"><img class="resto__poster" src="${config.BASE_IMAGE_URL(
-   pictureId,
-   'medium'
- )}" alt="${name}" /></div>
+ <div class="imageResto">
+ <picture>
+    <source media="(min-width: 768px)" srcset="${config.BASE_IMAGE_URL(pictureId, 'medium')}" type="image/jpeg">
+    <source media="(min-width: 1024px)" srcset="${config.BASE_IMAGE_URL(pictureId, 'large')}" type="image/jpeg">
+    <img class="resto-item__header__poster" alt="${name || '-'}" src="${config.BASE_IMAGE_URL(pictureId, 'small')}"
+        loading="lazy" class="lazyload">
+ </picture>
+ </div>
  
 
  <h3>Information</h3>
