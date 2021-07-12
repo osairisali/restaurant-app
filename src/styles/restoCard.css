@@ -3,9 +3,14 @@
   row-gap: 10px;
 }
 
+#restoList h3 {
+  margin: 0 auto;
+  text-align: center;
+}
+
 /*
-    Resto Item
-  */
+Resto Item
+*/
 
 .resto-item {
   width: 100%;
@@ -22,7 +27,7 @@
   width: 100%;
 }
 
-.resto-item__header__poster{
+.resto-item__header__poster {
   object-fit: cover;
 }
 

@@ -16,7 +16,8 @@ main {
 /* #content-component{
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
+  align-items: center;
 } */
 
 .content__heading {
@@ -31,12 +32,12 @@ main {
   }
 
   .content__heading {
-    padding: 20px;
+    padding: 10px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .content__heading {
-    padding: 20px 40px;
+    padding: 10px 40px;
   }
 }

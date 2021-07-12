@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 80px 50px 0 50px;
+  margin: 40px 50px 0 50px;
 }
 
 .searchInput {
@@ -12,16 +12,26 @@
   border: springgreen;
   border-style: solid;
   border-width: 3px;
-  width: 100%;
+  width: 75vw;
+  min-width: 100px;
+  max-width: 700px;
   height: 50px;
   text-align: center;
   font-size: larger;
 }
 
 .submitSearch {
-  width: 100%;
+  width: 50vw;
+  max-width: 200px;
+  min-width: 50px;
   height: 50px;
   text-align: center;
   font-size: larger;
   font-weight: bold;
+}
+
+@media (max-width: 425px) {
+  #searchRestoContainer {
+    margin: 30px 50px 0 50px;
+  }
 }

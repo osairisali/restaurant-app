@@ -10,7 +10,7 @@
 } */
 
 *:focus {
-  outline: 5px dashed orange;
+  outline: 5px double yellowgreen;
 }
 
 .skipToContent {

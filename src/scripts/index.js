@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   try {
     await app.renderPage()
-    // await registerServiceWorker()
+    await registerServiceWorker()
   } catch (error) {
     console.log(error)
   }

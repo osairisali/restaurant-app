@@ -130,7 +130,7 @@ const createFormReviewTemplate = (id) => `
 
 const createSearchRestoTemplate = () => `
 <div class="searchInputContainer">
-<input name="searchInput" id="searchInput" class="searchInput" type="text" placeholder="Restaurant name">
+<input name="searchInput" id="searchInput" class="searchInput" type="text" placeholder="Search restaurant list here">
 </div>
 <div id="searchButtonContainer">
 </div>
@@ -147,7 +147,7 @@ const createFooterTemplate = () => `
 `
 
 const createNoRestaurantFoundTemplate = () => `
-<h3>No Liked Restaurant Found!</h3>
+<h3>No Restaurant Found!</h3>
 `
 
 const createFailedPageTemplate = (component) => {

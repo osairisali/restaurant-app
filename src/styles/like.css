@@ -1,5 +1,5 @@
 /*
-   Like
+Like
 */
 .like {
   font-size: 18px;
@@ -16,4 +16,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.likedHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#query {
+  text-align: center;
+  margin: 0 auto;
 }
