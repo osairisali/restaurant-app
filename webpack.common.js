@@ -40,9 +40,6 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/')
-          // globOptions: {
-          //   ignore: ['**/images/**']
-          // }
         }
       ]
     }),
@@ -58,6 +55,9 @@ module.exports = {
         })]
     }),
     new OptimizeCSSAssetsPlugin({}),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false
+    })
   ]
 }
