@@ -4,7 +4,7 @@ class FavouriteRestoSearchView {
   getTemplate () {
     return `
         <div class="content">
-        <div class="likedHeader">
+        <div class="likedHeader flexColumn">
             <h2 class="content__heading">Your Liked Restaurant</h2>
             <input class="searchInput" id="query" type="text" placeholder="Search your liked restaurants here">
         </div>

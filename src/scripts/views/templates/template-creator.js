@@ -114,12 +114,13 @@ const createSubmitButtonTemplate = () => `
 const createFormReviewTemplate = (id) => `
 <h3>Review this restaurant!</h3>
 
-<form class="reviewForm" id="reviewForm">
-<input hidden="true" name="id" type="text" value=${id}>
-<div class="nameInput gap">
+<form class="flexColumn" id="reviewForm">
+<div class="nameInput gap flexColumn">
+    <label for="name">Name Field</label>
     <input type="text" class="border" name="name" id="name" placeholder="your name" required>
 </div>
-<div class="reviewInput gap">
+<div class="reviewInput gap flexColumn">
+    <label for="review">Review Field</label>
     <input id="review" class="border" name="review" type="text" placeholder="your review" required>
 </div>
 

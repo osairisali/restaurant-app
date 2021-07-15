@@ -54,7 +54,7 @@ img {
   display: block;
 }
 
-body{
+.flexColumn{
   display: flex;
   flex-direction: column;
   justify-content: space-between;

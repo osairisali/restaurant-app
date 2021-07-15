@@ -13,13 +13,6 @@ main {
   width: 100vw;
 }
 
-/* #content-component{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
 .content__heading {
   text-align: center;
   vertical-align: middle;

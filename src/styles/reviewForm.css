@@ -1,11 +1,5 @@
-#reviewForm {
-  display: flex;
-  flex-direction: column;
-}
-
 .nameInput {
   margin-bottom: 10rem;
-  justify-content: space-between;
 } 
 
 .gap{
