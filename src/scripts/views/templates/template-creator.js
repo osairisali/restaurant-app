@@ -147,14 +147,6 @@ const createFooterTemplate = () => `
     </footer>
 `
 
-const createNoRestaurantFoundTemplate = (component) => {
-  document.querySelector(component).textContent = 'No restaurant found!'
-}
-
-const createFailedPageTemplate = (component) => {
-  document.querySelector(component).textContent = "We think you are offline, or maybe there's a server error. Try again later."
-}
-
 const createInfo = (component, info) => {
   document.querySelector(component).textContent = info
 }
@@ -171,8 +163,6 @@ export {
   createSearchRestoTemplate,
   createSearchButtonTemplate,
   createFooterTemplate,
-  createNoRestaurantFoundTemplate,
-  createFailedPageTemplate,
   createReviewItemTemplate,
   createError404Template,
   createInfo
