@@ -17,7 +17,7 @@
   background-color: wheat;
   opacity: 85%;
   position: relative;
-  top: 40vh;
+  top: 30%;
 }
 
 .jumbotron__title {
@@ -28,15 +28,13 @@
 .jumbotron__tagline {
   color: red;
   padding: 20px 0;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 /* TABLET AND LARGER VIEW*/
-
 @media screen and (min-width: 768px) {
   .jumbotron__tagline {
     color: red;
     padding: 20px;
-    font-size: 30px;
   }
 }
