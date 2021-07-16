@@ -29,7 +29,7 @@ class FavouriteRestoSearchView {
       }, '')
     } else {
       html = ''
-      createInfo('.searchFavoriteInfo', 'No restaurant matched your query')
+      createInfo('.searchFavoriteInfo', 'No Liked Restaurant!')
     }
 
     document.querySelector('#resto').innerHTML = html

@@ -15,7 +15,6 @@ describe('Searching liked restaurants', () => {
   const setRestoSearchContainer = () => {
     view = new FavouriteRestoSearchView()
     document.body.innerHTML = view.getTemplate()
-    // console.log('doc body: ', document.body)
   }
 
   const constructPresenter = () => {
