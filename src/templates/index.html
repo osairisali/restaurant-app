@@ -15,42 +15,45 @@
     <title>Restaurant Mini App</title>
 </head>
 
-<body class="flexColumn">
-    <!-- HEADER & NAV -->
-    <a class="skipToContent" href="#restoList">To Content</a>
-    <header>
-        <div class="header">
-            <div class="topHeader">
-                <button class="noDecor" id="hamburgerBtn" tabindex="0" aria-label="hamburger button">☰</button>
-                <div class="appName">
-                    <a class="noDecor">Hunger Apps</a>
+<body>
+    <div class="flexColumn fullheight">
+        <!-- HEADER & NAV -->
+        <a class="skipToContent" href="#restoList">To Content</a>
+        <header>
+            <div class="header">
+                <div class="topHeader">
+                    <button class="noDecor" id="hamburgerBtn" tabindex="0" aria-label="hamburger button">☰</button>
+                    <div class="appName">
+                        <a class="noDecor">Hunger Apps</a>
+                    </div>
                 </div>
+
+                <nav class="nav" id="navigationDrawer">
+                    <ul class="nav__list">
+                        <li><a class="menu noDecor" href="/">Home</a></li>
+                        <li><a class="menu noDecor" href="#/liked">Favourites</a></li>
+                        <li><a class="menu noDecor" href="#/search">Search</a></li>
+                        <li><a class="menu noDecor" href="https://github.com/osairisali" target="_blank"
+                                rel="noopener">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
-            <nav class="nav" id="navigationDrawer">
-                <ul class="nav__list">
-                    <li><a class="menu noDecor" href="/">Home</a></li>
-                    <li><a class="menu noDecor" href="#/liked">Favourites</a></li>
-                    <li><a class="menu noDecor" href="#/search">Search</a></li>
-                    <li><a class="menu noDecor" href="https://github.com/osairisali" target="_blank"
-                            rel="noopener">About Us</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        </header>
 
-    </header>
+        <!-- MAIN PAGE -->
+        <main id="mainContent">
+            <div id="content-component">
+                <!-- to be inserted by index.js -->
+            </div>
+        </main>
 
-    <!-- MAIN PAGE -->
-    <main id="mainContent">
-        <div id="content-component">
-            <!-- to be inserted by index.js -->
-        </div>
-    </main>
+        <footer>
+            <p id="footer">Hak Cipta (c) 2021 - Hunger Apps</p>
+        </footer>
+    </div>
 
-    <footer>
-        <p id="footer">Hak Cipta (c) 2021 - Hunger Apps</p>
-    </footer>
 
 </body>
 

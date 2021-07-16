@@ -1,5 +1,3 @@
-// @param html element containing ul and li elements of navigation
-// @param drawer html element of navigation toggle button
 function addToggleToNav (elements, drawer) {
   const navElements = Array.from(elements[0].children[0].children)
 

@@ -147,14 +147,17 @@ const createFooterTemplate = () => `
     </footer>
 `
 
-const createNoRestaurantFoundTemplate = () => `
-<h3>No Restaurant Found!</h3>
-`
+const createNoRestaurantFoundTemplate = (component) => {
+  const noRestoElem = document.createElement('h3')
+  noRestoElem.innerHTML = 'No restaurant found!'
+  document.querySelector(component).append(noRestoElem)
+}
 
 const createFailedPageTemplate = (component) => {
-  document.querySelector(`${component}`).innerHTML = `
-  <h3>We think you are offline, or maybe there's a server error. Try again later.</h3>
-`
+  const parentElem = document.querySelector(component).outerHTML
+  const failedElem = document.createElement('h3')
+  failedElem.innerHTML = "We think you are offline, or maybe there's a server error. Try again later."
+  parentElem.replaceChild(failedElem)
 }
 
 const createError404Template = () => '<h3>URL not found! Check your url spelling.</h3>'

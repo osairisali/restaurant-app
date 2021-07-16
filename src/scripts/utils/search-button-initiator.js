@@ -50,7 +50,7 @@ const SearchButtonInitiator = {
 
       if (restaurants.length === 0) {
         console.log('redirecting to search page')
-        resultsContainer.innerHTML = createNoRestaurantFoundTemplate()
+        createNoRestaurantFoundTemplate('.content__heading')
       }
 
       const restoListContainer = document.querySelector('#restoList')
@@ -59,7 +59,7 @@ const SearchButtonInitiator = {
       })
     } catch (error) {
       console.log(error)
-      createFailedPageTemplate('#restoList')
+      createFailedPageTemplate('.content__heading')
     }
   }
 }

@@ -13,8 +13,8 @@ const RestoList = {
     <!-- JUMBOTRON -->
           <div class="jumbotron lazyload" loading="lazy">
           <picture id="jumbotron-image">
-          <source media="(min-width: 768px)" srcset="./images/heros/hero-image_2--small.jpg" type="image/jpg">
-          <source media="(min-width: 1024px)" srcset="./images/heros/hero-image_2--large.jpg" type="image/jpg">
+          <source media="(max-width: 768px)" srcset="./images/heros/hero-image_2--small.jpg" type="image/jpg">
+          <source media="(min-width: 769px)" srcset="./images/heros/hero-image_2--large.jpg" type="image/jpg">
           <img class="jumbotron-image__header" alt="jumbotron image" src="./images/heros/hero-image_2--small.jpg"
               loading="lazy" class="lazyload">
           </picture>
