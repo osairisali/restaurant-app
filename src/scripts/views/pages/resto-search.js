@@ -8,6 +8,7 @@ const RestoSearch = {
     <div id="searchRestoContainer">
     </div>
       <h2 class="content__heading">Restaurant List</h2>
+      <h3 class="searchInfo"></h3>
       <div id="restoList" class="restoList"></div>
       </div> 
         `

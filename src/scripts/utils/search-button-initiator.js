@@ -2,8 +2,7 @@ import {
   createSearchButtonTemplate,
   createSearchRestoTemplate,
   createRestoItemTemplate,
-  createNoRestaurantFoundTemplate,
-  createFailedPageTemplate
+  createInfo
 } from '../views/templates/template-creator'
 import { addLoader, removeLoader } from '../utils/loader'
 
@@ -47,10 +46,11 @@ const SearchButtonInitiator = {
 
       resultsContainer.innerHTML = ''
       keyword.value = ''
+      document.querySelector('.searchInfo').textContent = ''
 
       if (restaurants.length === 0) {
         console.log('redirecting to search page')
-        createNoRestaurantFoundTemplate('.content__heading')
+        createInfo('.searchInfo', 'No restaurant found on the server!')
       }
 
       const restoListContainer = document.querySelector('#restoList')
@@ -59,7 +59,7 @@ const SearchButtonInitiator = {
       })
     } catch (error) {
       console.log(error)
-      createFailedPageTemplate('.content__heading')
+      createInfo('.searchInfo', 'Error fetching data. We think you are offline!')
     }
   }
 }

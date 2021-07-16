@@ -148,16 +148,15 @@ const createFooterTemplate = () => `
 `
 
 const createNoRestaurantFoundTemplate = (component) => {
-  const noRestoElem = document.createElement('h3')
-  noRestoElem.innerHTML = 'No restaurant found!'
-  document.querySelector(component).append(noRestoElem)
+  document.querySelector(component).textContent = 'No restaurant found!'
 }
 
 const createFailedPageTemplate = (component) => {
-  const parentElem = document.querySelector(component).outerHTML
-  const failedElem = document.createElement('h3')
-  failedElem.innerHTML = "We think you are offline, or maybe there's a server error. Try again later."
-  parentElem.replaceChild(failedElem)
+  document.querySelector(component).textContent = "We think you are offline, or maybe there's a server error. Try again later."
+}
+
+const createInfo = (component, info) => {
+  document.querySelector(component).textContent = info
 }
 
 const createError404Template = () => '<h3>URL not found! Check your url spelling.</h3>'
@@ -175,5 +174,6 @@ export {
   createNoRestaurantFoundTemplate,
   createFailedPageTemplate,
   createReviewItemTemplate,
-  createError404Template
+  createError404Template,
+  createInfo
 }
