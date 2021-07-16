@@ -1,5 +1,4 @@
 .jumbotron {
-  /* position: relative; */
   height: 100vh;
   width: 100vw;
 }
@@ -19,11 +18,10 @@
   opacity: 85%;
   position: relative;
   top: 40vh;
-  
 }
 
 .jumbotron__title {
-  font-size: 25px;
+  font-size: 2.5rem;
   color: gray;
 }
 
@@ -31,17 +29,11 @@
   color: red;
   padding: 20px 0;
   font-size: 20px;
-  /* line-height: px; */
 }
 
 /* TABLET AND LARGER VIEW*/
 
 @media screen and (min-width: 768px) {
-  .jumbotron__title {
-    font-size: 50px;
-    color: gray;
-  }
-
   .jumbotron__tagline {
     color: red;
     padding: 20px;

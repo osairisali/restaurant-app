@@ -26,7 +26,7 @@
 .nav__list {
   padding: 20px;
   list-style-type: none;
-  font-size: 45px;
+  font-size: 2rem;
 }
 
 .nav__list li {
@@ -36,7 +36,7 @@
 
 .nav__list li a {
   display: inline-block;
-  line-height: 75px;
+  line-height: 45px;
 }
 
 .open {
@@ -46,7 +46,7 @@
 /* TABLET VIEW */
 @media (min-width: 768px) {
   .menu {
-    font-size: 45px;
+    font-size: 2rem;
   }
 
   #hamburgerBtn {
