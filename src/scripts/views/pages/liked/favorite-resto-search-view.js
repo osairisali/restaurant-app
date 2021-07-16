@@ -1,4 +1,4 @@
-import { createNoRestaurantFoundTemplate, createRestoItemTemplate } from '../../templates/template-creator'
+import { createRestoItemTemplate, createInfo } from '../../templates/template-creator'
 
 class FavouriteRestoSearchView {
   getTemplate () {
@@ -7,6 +7,7 @@ class FavouriteRestoSearchView {
         <div class="likedHeader flexColumn">
             <h2 class="content__heading">Your Liked Restaurant</h2>
             <input class="searchInput" id="query" type="text" placeholder="Search your liked restaurants here">
+            <h2 class="searchFavoriteInfo"></h2>
         </div>
             <div id="resto" class="resto"></div>
         </div>
@@ -21,21 +22,19 @@ class FavouriteRestoSearchView {
 
   showFavoriteRestaurants (restaurants = []) {
     let html
+    createInfo('.searchFavoriteInfo', '')
     if (restaurants.length > 0) {
       html = restaurants.reduce((acc, restaurant) => {
         return acc.concat(createRestoItemTemplate(restaurant))
       }, '')
     } else {
-      html = this._getEmptyRestoTemplate()
+      html = ''
+      createInfo('.searchFavoriteInfo', 'No restaurant matched your query')
     }
 
     document.querySelector('#resto').innerHTML = html
 
     document.querySelector('#resto').dispatchEvent(new Event('resto:updated'))
-  }
-
-  _getEmptyRestoTemplate () {
-    return createNoRestaurantFoundTemplate()
   }
 }
 
