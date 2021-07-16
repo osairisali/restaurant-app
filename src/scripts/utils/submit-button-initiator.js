@@ -1,7 +1,7 @@
 import {
   createSubmitButtonTemplate,
   createFormReviewTemplate,
-  createFailedPageTemplate
+  createInfo
 } from '../views/templates/template-creator'
 
 const SubmitButtonInitiator = {
@@ -53,7 +53,7 @@ const SubmitButtonInitiator = {
       console.log(error)
       if (error.message === 'Failed to fetch') {
         // render offline page if error in submitting response
-        createFailedPageTemplate('#restoDetail')
+        createInfo('#restoDetail', 'Failed to fetch! Maybe you are offline')
       }
     }
   }

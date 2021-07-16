@@ -1,8 +1,7 @@
 import FetchResto from '../../data/fetch-resto'
 import {
   createRestoItemTemplate,
-  // createFooterTemplate,
-  createFailedPageTemplate
+  createInfo
 } from '../templates/template-creator'
 import { addLoader, removeLoader } from '../../utils/loader'
 
@@ -53,7 +52,7 @@ const RestoList = {
       })
     } catch (error) {
       console.log(error)
-      createFailedPageTemplate('#restoList')
+      createInfo('#restoList', `${error}`)
     }
   }
 }

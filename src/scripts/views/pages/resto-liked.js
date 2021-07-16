@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 import FavouriteRestoIdb from '../../data/favourite-resto-idb'
 import {
-  createFailedPageTemplate
+  createInfo
 } from '../templates/template-creator'
 import clearElement from '../../utils/clear-element'
 import FavouriteRestoSearchView from './liked/favorite-resto-search-view'
@@ -23,7 +23,7 @@ const RestoLiked = {
       new FavoriteRestoSearchPresenter({ view, favoriteRestaurants: FavouriteRestoIdb })
     } catch (error) {
       console.log(error)
-      createFailedPageTemplate('#resto')
+      createInfo('#resto', `${error}`)
     }
   }
 }

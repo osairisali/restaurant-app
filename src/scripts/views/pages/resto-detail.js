@@ -2,7 +2,7 @@ import {
   createRestoDetailTemplate,
   createReviewItemTemplate,
   createError404Template,
-  createFailedPageTemplate
+  createInfo
 } from '../templates/template-creator'
 import UrlParser from '../../routes/url-parser'
 import FetchResto from '../../data/fetch-resto'
@@ -69,7 +69,7 @@ const RestoDetail = {
 
       if (error.message === 'Failed to fetch') {
         // render offline page if error in fetching response
-        createFailedPageTemplate('#restoDetail')
+        createInfo('.restoDetail', 'Maybe you are offline!')
       } else {
         // render failed 404 page if restaurant is undefined
         restoDetailContainer.innerHTML = createError404Template()
