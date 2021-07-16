@@ -39,19 +39,16 @@ const RestoList = {
     try {
       addLoader('#restoList')
       const restaurantList = await FetchResto.getRestoList()
-      console.log('restaurantList: ', restaurantList)
 
       // replace loader icon with jumbotron & restaurant list container when restaurant list is ready
       removeLoader('#restoList')
 
       // render restaurant list
       const restoListContainer = document.querySelector('#restoList')
-      console.log('restoListContainer: ', restoListContainer)
       restaurantList.forEach((restaurant) => {
         restoListContainer.innerHTML += createRestoItemTemplate(restaurant)
       })
     } catch (error) {
-      console.log(error)
       createInfo('#restoList', `${error}`)
     }
   }

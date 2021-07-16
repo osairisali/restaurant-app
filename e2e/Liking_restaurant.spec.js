@@ -44,19 +44,16 @@ Scenario('searching liked restaurants', async ({ I }) => {
     I.seeElement('#likeButton')
     I.click('#likeButton')
     const restaurantName = (await I.grabTextFrom('.resto__title')).trim().toLowerCase()
-    console.log('restaurant name pushed: ', restaurantName)
     restaurants.push(restaurantName)
     I.amOnPage('/')
   }
 
   I.amOnPage('/#/liked')
   I.seeElement('#query')
-  console.log('liked restaurants: ', restaurants)
   const searchQuery = restaurants[1].trim().toLowerCase().substring(0, 4)
   const matchedRestaurants = restaurants.filter((resto) => {
     return resto.indexOf(searchQuery) !== -1
   })
-  console.log('matched restaurants: ', matchedRestaurants)
   I.fillField('#query', searchQuery)
   I.pressKey('Enter')
 
@@ -67,9 +64,7 @@ Scenario('searching liked restaurants', async ({ I }) => {
   // assert name of each matched restaurant with visible element
   for (let i = 0; i < matchedRestaurants.length; i++) {
     const locateRestaurantName = (await I.grabTextFrom(locate('.resto-title a').at(i + 1)))
-    console.log('locateRestaurantName: ', locateRestaurantName.trim().toLowerCase())
     const visibleMatchedRestaurantName = locateRestaurantName.trim().toLowerCase()
-    console.log('visibleMatchedRestaurantName: ', visibleMatchedRestaurantName)
     assert.strictEqual(visibleMatchedRestaurantName, matchedRestaurants[i])
   }
 })

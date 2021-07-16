@@ -33,7 +33,6 @@ registerRoute(
 
 registerRoute(
   ({ url }) => {
-    console.log('url from registerRoute: ', url)
     return (
       url.origin === 'https://fonts.googleapis.com' ||
       url.origin === 'https://restaurant-api.dicoding.dev' ||

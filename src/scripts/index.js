@@ -41,6 +41,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     await app.renderPage()
     await registerServiceWorker()
   } catch (error) {
-    console.log(error)
+
   }
 })

@@ -9,7 +9,6 @@ import FavoriteRestoShowPresenter from './liked/favorite-resto-show-presenter'
 import FavoriteRestoSearchPresenter from './liked/favorite-resto-search-presenter'
 
 const view = new FavouriteRestoSearchView()
-console.log('view instance: ', view.showFavoriteRestaurants)
 
 const RestoLiked = {
   async render () {
@@ -22,7 +21,6 @@ const RestoLiked = {
       new FavoriteRestoShowPresenter({ view, favoriteRestaurants: FavouriteRestoIdb })
       new FavoriteRestoSearchPresenter({ view, favoriteRestaurants: FavouriteRestoIdb })
     } catch (error) {
-      console.log(error)
       createInfo('#resto', `${error}`)
     }
   }

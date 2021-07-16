@@ -28,8 +28,7 @@ const SubmitButtonInitiator = {
     const review = document.querySelector('#review')
     try {
       event.preventDefault()
-      // console.log(name.value, review.value);
-      const response = await fetch(
+      await fetch(
         'https://restaurant-api.dicoding.dev/review',
         {
           method: 'POST',
@@ -45,12 +44,10 @@ const SubmitButtonInitiator = {
         }
       )
 
-      console.log('your review is submitted: ', response)
       name.value = ''
       review.value = ''
       location.reload()
     } catch (error) {
-      console.log(error)
       if (error.message === 'Failed to fetch') {
         // render offline page if error in submitting response
         createInfo('#restoDetail', 'Failed to fetch! Maybe you are offline')

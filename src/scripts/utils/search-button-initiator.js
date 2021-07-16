@@ -37,19 +37,16 @@ const SearchButtonInitiator = {
       )
 
       const { restaurants } = await response.json()
-      console.log('search results: ', restaurants)
 
       // render search results
       removeLoader('#restoList')
       const resultsContainer = document.querySelector('#restoList')
-      console.log('resultsContainer: ', resultsContainer)
 
       resultsContainer.innerHTML = ''
       keyword.value = ''
       document.querySelector('.searchInfo').textContent = ''
 
       if (restaurants.length === 0) {
-        console.log('redirecting to search page')
         createInfo('.searchInfo', 'No restaurant found on the server!')
       }
 
@@ -58,8 +55,8 @@ const SearchButtonInitiator = {
         restoListContainer.innerHTML += createRestoItemTemplate(resto)
       })
     } catch (error) {
-      console.log(error)
       createInfo('.searchInfo', 'Error fetching data. We think you are offline!')
+      removeLoader('#restoList')
     }
   }
 }

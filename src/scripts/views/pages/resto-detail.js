@@ -33,7 +33,6 @@ const RestoDetail = {
       // remove loading indicator
       removeLoader('#restoDetail')
 
-      console.log('restaurant: ', restaurant)
       restoDetailContainer.innerHTML = createRestoDetailTemplate(restaurant)
 
       // add like button
@@ -65,8 +64,6 @@ const RestoDetail = {
       // remove search input field when this page comes from search results
       clearElement(['#searchRestoContainer'])
     } catch (error) {
-      console.log(error.message)
-
       if (error.message === 'Failed to fetch') {
         // render offline page if error in fetching response
         createInfo('.restoDetail', 'Maybe you are offline!')

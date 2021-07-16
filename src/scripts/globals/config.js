@@ -5,7 +5,6 @@ const config = {
   TOKEN: 12345,
   // size options: large, medium, small
   BASE_IMAGE_URL (id, size = 'small') {
-    console.log('requesting image size: ', size)
     return `https://restaurant-api.dicoding.dev/images/${size}/${id}`
   }
 }
