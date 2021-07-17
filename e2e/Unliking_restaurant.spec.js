@@ -25,13 +25,11 @@ const likingSeveralRestaurants = async (numRes, I) => {
       I.seeElement('#likeButton')
       I.click('#likeButton')
       const restaurantName = await I.grabTextFrom('.resto__title')
-      console.log('restaurant name pushed: ', restaurantName)
       likedRestaurants.push(restaurantName)
       I.amOnPage('/')
     }
     return likedRestaurants
   } catch (error) {
-    console.log('error in likingSeveralRestaurants function: ', error)
   }
 }
 
@@ -42,9 +40,7 @@ Scenario('unliking a restaurant', async ({ I }) => {
   I.seeElement('.resto-title a')
 
   // assert number of visible liked restaurants
-  console.log('liked restaurants: ', likedRestaurants)
   const numberOfVisibleElements = await I.grabNumberOfVisibleElements('.resto-title a')
-  console.log('number of visible elements: ', numberOfVisibleElements)
   assert.strictEqual(numberOfVisibleElements, likedRestaurants.length)
 
   // asserting that liked restaurants before are the same with the list showed in the liked page
@@ -53,9 +49,9 @@ Scenario('unliking a restaurant', async ({ I }) => {
     const locateRestaurantName = locate('.resto-title a').at(i + 1)
     showedRestaurants.push(await I.grabTextFrom(locateRestaurantName))
   }
-  console.log('showed restaurants: ', showedRestaurants)
   //   assert.notStrictEqual(showedRestaurants, likedRestaurants)
   compareArrayElements(showedRestaurants, likedRestaurants)
+  // assert.deepEqual(showedRestaurants, likedRestaurants)
 
   // assert unliking first restaurant
   const firstUnliking = locate('.resto-title a').first()
@@ -66,7 +62,6 @@ Scenario('unliking a restaurant', async ({ I }) => {
   // remove liked restaurants from likedRestaurant's array
   const removedRestaurant = await I.grabTextFrom('.resto__title')
   likedRestaurants = [...likedRestaurants].filter((resto) => resto !== removedRestaurant)
-  console.log('updated liked restaurant array: ', likedRestaurants)
 
   I.amOnPage('/#/liked')
 
@@ -75,7 +70,6 @@ Scenario('unliking a restaurant', async ({ I }) => {
 
   // asserting the names of remaining liked restaurants
   const remainingLikedRestaurants = await I.grabTextFromAll('.resto-title a')
-  console.log('remaining liked restaurants: ', remainingLikedRestaurants)
   // should we use assert.notStrictEqual to compare array??? NO for element to element comparisons
   compareArrayElements(likedRestaurants, remainingLikedRestaurants)
 
@@ -101,7 +95,6 @@ Scenario('unliking restaurants until favorite restaurant is empty', async ({ I }
 
     // updating likedRestaurants
     likedRestaurants = [...likedRestaurants].filter((resto) => resto !== restaurantToRemove)
-    console.log(likedRestaurants)
     I.amOnPage('/#/liked')
   }
 
